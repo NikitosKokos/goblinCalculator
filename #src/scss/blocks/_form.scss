@@ -1,0 +1,284 @@
+.goblin-form {
+    padding: 80px 0;
+    &__content {
+    }
+    &__body{
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width: 767px){
+           margin: 0 -15px;
+        }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 54px;
+        color: #66CC00;
+        margin: 0px 0px 30px 0px;
+        @media (max-width: 480px){
+            font-size: 44px;
+        }
+    }
+    &__item{
+        flex: 0 0 50%;
+        padding: 0 15px;
+        margin: 0px 0px 30px 0px;
+        @media (max-width: 767px){
+            flex: 1 1 100%;
+            padding: 0px 0px 0px 0px;
+         }
+    }
+    &__input {
+        height: 40px;
+        position: relative;
+        input{
+            height: 100%;
+            width: 100%;
+            padding: 0 50px 0 20px; 
+            border-radius: 0;
+            border: 1px solid #eee;
+            font-size: 16px;
+            font-weight: 500;
+            -moz-appearance: textfield;
+            &::-webkit-inner-spin-button { 
+                display: none;
+            }
+        }
+        &_c {
+            
+             &:after{
+                content: '';
+                background: url('../img/icons/coin.svg') right no-repeat;
+                background-size: contain;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+            }
+            input{
+                color: #FFCC00;
+                &::placeholder{
+                    color: #FFCC00;
+                }
+            }
+        }
+
+        &_d {
+            &:after{
+                content: '';
+                background: url('../img/icons/diamond.png') right no-repeat;
+                background-size: contain;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+            }
+            
+            input{
+                color: #33CCCC;
+                &::placeholder{
+                    color: #33CCCC;
+                }
+            }
+        }
+
+        &_e {
+            &:after{
+                content: '';
+                background: url('../img/icons/emerald.png') right no-repeat;
+                background-size: contain;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+            }
+            input{
+                color: #00FF66;
+                &::placeholder{
+                    color: #00FF66;
+                }
+            }
+        }
+
+        &_s {
+            &:after{
+                content: '';
+                background: url('../img/icons/sapphire.png') right no-repeat;
+                background-size: contain;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+            }
+            
+            input{
+                color: #3366FF;
+                &::placeholder{
+                    color: #3366FF;
+                }
+            }
+        }
+    }
+    &__btn{
+        border-radius: 30px;
+        background: #66CC00;
+        border: 1px solid transparent;
+        font-size: 24px;
+        font-weight: 500;
+        color: $white;
+        height: 50px;
+        padding: 0 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+        @media (min-width: 992px){
+           &:hover{
+            color: #66CC00;
+            background: transparent;
+            border-color: #66CC00;
+         }
+        }
+    }
+}
+
+
+
+.result-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #66CC00, $alpha: .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    &._active{
+        opacity: 1; 
+        visibility: visible;
+    }
+    &__close{
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    &__body {
+        background: $white;
+        width: 700px;
+        padding: 30px 15px;
+        position: relative;
+        @media (max-width: 767px){
+           width: 100%;
+           margin: 0 10px;
+        }
+    }
+
+    &__headline {
+        font-size: 34px;
+        font-weight: 700;
+        color: #66CC00;
+        margin: 0px 0px 20px 0px;
+        padding: 0 30px 0 0;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width: 767px){
+           margin: 0 -10px;
+        }
+    }
+
+    &__item {
+        flex: 0 0 50%;
+        padding: 0 10px;
+        margin: 0px 0px 15px 0px;
+        @media (max-width: 767px){
+           flex: 1 1 100%;
+           padding: 0px 0px 0px 0px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 500;
+        position: relative;
+        padding: 0px 0px 0px 30px;
+        line-height: calc(28 / 20);
+        &_c {
+            &:after{
+                content: '';
+                background: url('../img/icons/coin.svg') right no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 4px;
+                left: 5px;
+            }
+        }
+        &_d{
+            &:after{
+                content: '';
+                background: url('../img/icons/diamond.png') right no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 4px;
+                left: 5px;
+            }
+        }
+        &_e{
+            &:after{
+                content: '';
+                background: url('../img/icons/emerald.png') right no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 4px;
+                left: 5px;
+            }
+        }
+        &_s{
+            &:after{
+                content: '';
+                background: url('../img/icons/sapphire.png') right no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 4px;
+                left: 5px;
+            }
+        }
+    }
+
+    &__c {
+        color: #FFCC00;
+    }
+    &__d{
+        color: #33CCCC;
+    }
+    &__e{
+        color: #00FF66;
+    }
+    &__s{
+        color: #3366FF;
+    }
+}

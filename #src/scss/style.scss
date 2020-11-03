@@ -1,0 +1,45 @@
+// base
+@import "./base/variables";
+@import "./base/mixins";
+@import "./base/fonts";
+@import "./base/zeroing";
+@import "./base/ibg"; 
+
+// blocks
+@import "./blocks/header";
+@import "./blocks/footer";
+@import "./blocks/form";
+
+// global styles
+._container {
+  max-width: $width + px;
+  margin: 0 auto;
+  
+  @media (max-width: $width + px){
+    max-width: 970px;
+  }
+  @media (max-width: 991.98px){
+    max-width: 750px;
+  }
+  @media (max-width: 767.98px){
+    max-width: none;
+    padding: 0px 10px;
+  }
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 1 auto;
+}
+
+body.hidden{
+  overflow: hidden;
+}
+
+// media
+@import "./base/media";
